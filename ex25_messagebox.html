@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>메시지 박스</h1>
+    <form name="form1">
+        <input type="button" value="버튼1" name="btn1">
+        <input type="button" value="버튼2" name="btn2">
+        <input type="button" value="버튼3" name="btn3">
+    </form>
+
+    <script>
+        //Message Box
+        //- Dialog Box
+        //- 사용자와 대화를 하기 위해 사용되는 상자(창)
+        //1. alert() ***
+        //2. confirm() ***
+        //3. prompt()
+
+        //- 최상위 객체(window) 생략 가능
+        //window.document.form1 -> document.form1
+        //window.history.back() -> history.back()
+        //window.screen.availWidth -> screen.availWidth
+
+        var btn1 = window.document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3; 
+
+        btn1.onclick = function() {
+            alert("메시지");
+            //= window.alert("메시지");
+        };
+        
+        btn2.onclick = function() {
+            // confirm("메시지");
+            //=window.confirm();
+            var result = confirm("메시지");
+            alert(result);
+
+
+            result = confirm("정말 삭제하겠습니까?");
+
+            if(result) {
+                alert("삭제 완료");
+            } else {
+                alert("삭제 취소");
+            }
+        };
+
+        btn3.onclick = function() {
+            // prompt("메시지", "값"); -> 데이터 입력용 메시지 박스
+            //- <form> + <input>
+            
+                var name = prompt("이름을 입력하세요.", "dddd");
+                if(name !== null) {
+                    alert("안녕하세요. " + name + "님");
+                }
+        };
+
+        
+        
+    </script>
+</body>
+</html>
