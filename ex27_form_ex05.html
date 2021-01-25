@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        배경색: <select name="selColor"></select>
+    </form>
+
+    <script>
+
+        var selColor = document.form1.selColor;
+
+        var color = [ "white", "black", "tomato", "gold", "cornflowerblue", "green" ];
+        var colorName = [ "흰색", "검정", "빨강", "노랑", "파랑", "녹색" ];
+
+        for (var i=0; i<color.length; i++) {    
+            var op = new Option(colorName[i], color[i]);
+            selColor.options.add(op);
+        }
+
+        console.log(selColor.length);//6
+
+        //TODO
+        selColor.onchange = function() {
+            // document.bgColor = selColor.value;
+            document.bgColor = selColor.value;
+        };
+
+        //= 자바스크립트의 향상된 for문
+        //- of 주의 
+        // for (var c of color) {
+        //     console.log(c);
+        // }
+
+        //in은 나중에
+        // for (var c in color) {
+        //     console.log(c);
+        // }
+
+        // color.forEach(function(item, index) {
+        //     console.log(item);
+        // });
+
+        //Modern JavaScript
+
+    </script>
+</body>
+</html>
